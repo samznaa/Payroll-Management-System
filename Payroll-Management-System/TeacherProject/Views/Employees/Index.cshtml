@@ -1,0 +1,87 @@
+﻿@model IEnumerable<TeacherProject.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PermanentAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TemporaryAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProfilePhoto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CitizenShipFrontImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CitizenShipBackImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PermanentAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TemporaryAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProfilePhoto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CitizenShipFrontImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CitizenShipBackImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td> 
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
